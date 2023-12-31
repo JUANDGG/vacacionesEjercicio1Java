@@ -17,17 +17,15 @@ public class GestionCategorias implements OperacionesCategorias {
         
       
         
-      
-        
          @Override 
         public int buscar(String nombreCategoria) { 
                for (int i = 0; i < datosCategoria.size(); i++) {
                 String nombreCategoriasExiste = datosCategoria.get(i).getNombre();
                 if (nombreCategoria.toLowerCase().equals(nombreCategoriasExiste.toLowerCase())) {
-                    return i;  // Devuelve la posición si encuentra la categoría
+                    return i; 
                 }
             }
-            return -1; // Devuelve -1 si no se encuentra la categoría
+            return -1; 
         }
     
         @Override 
@@ -42,11 +40,11 @@ public class GestionCategorias implements OperacionesCategorias {
 
         @Override
         public void eliminar(String nombreCategoria) {
-                int   pocicionCategoria= buscar(nombreCategoria);
-                if(pocicionCategoria <= -1){
-                        throw new RuntimeException("no se puede eliminar la categoria por que no se encuentra !!");
-                }
-                datosCategoria.remove(pocicionCategoria);
+            int   pocicionCategoria= this.buscar(nombreCategoria);
+            if(pocicionCategoria <= -1){
+                    throw new RuntimeException("no se puede eliminar la categoria por que no se encuentra !!");
+            }
+            datosCategoria.remove(pocicionCategoria);
         }
 
         public ArrayList<Categorias> getDatosCategoria() {

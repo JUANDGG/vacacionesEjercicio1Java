@@ -20,10 +20,6 @@ public class Categorias {
         
         /*----------------------------------------METODOS SETTERS----------------------------------------*/
         public void setNombre(String nombre) {
-                String regex = "^[a-zA-Z]+$";
-                if(!nombre.matches(regex)){
-                        throw new RuntimeException("no se puedo agregar un nombre de categoria que tenga numeros !!");
-                }
                 this.nombre = nombre;
         }
         /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/

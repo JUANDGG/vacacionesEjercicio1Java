@@ -8,21 +8,28 @@ public class Productos {
         private String nombre  ;
         private Float precio;
         private String categoria ;
+        private int cantidad ;
+
+   
         
         
         /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
         
         /*----------------------------------------CONSTRUCTORES------------------------------------------------*/
-        public Productos( String serialReferencia ,  String nombre ,Float precio ,  String categoria) {
+        public Productos( String serialReferencia ,  String nombre ,Float precio ,  String categoria,int cantidad) {
                 this.setNumeroReferencia(serialReferencia);
                 this.setNombre(nombre);
                 this.setPrecio(precio);
                 this.setCategoria(categoria);
+                this.setCantidad(cantidad);
         }
         
         /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
         
         /*----------------------------------------METODOS SETTERS--------------------------------------------*/
+        
+        
+        
         public void setNumeroReferencia(String serialReferencia) {
                 this.serialReferencia = serialReferencia;
         }
@@ -38,6 +45,13 @@ public class Productos {
         public void setCategoria(String categoria) {
             this.categoria = categoria;
         }
+        
+        
+        public void setCantidad(int cantidad) {
+            this.cantidad = cantidad;
+        }
+
+    
         
         /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
         
@@ -60,6 +74,10 @@ public class Productos {
                 return this.categoria;
         }
         
+        public int getCantidad() {
+            return cantidad;
+        }
+        
         
         /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
         
@@ -67,10 +85,11 @@ public class Productos {
         @Override
         public String toString() {
             return 
-                    "serial del producto : " + serialReferencia  + "\n"+ 
-                    "nombre del producto : " + nombre + "\n" + 
-                    " precio del producto :" + precio +"\n"+
-                    "categoria del producto" + categoria + "\n";
+                    "serial del producto : " + this.getSerialReferencia()  + "\n"+ 
+                    "nombre del producto : " + this.getNombre() + "\n" + 
+                    "precio del producto :" + this.getPrecio() +"\n"+
+                    "categoria del producto :" + this.getCategoria() + "\n" +
+                    "cantidad del producto : " + this.getCantidad();
         }
         
         /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
